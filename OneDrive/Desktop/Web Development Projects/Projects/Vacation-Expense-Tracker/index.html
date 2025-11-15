@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vacation Expense Tracker</title>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+</head>
+
+<body>
+    <header class="topbar">
+        <h1>Vacation Expense Tracker</h1>
+        <p class="subtitle">Track pre-trip, trip, and post-trip expenses — mobile first</p>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Add Expense</h2>
+            <form id="expense-form">
+                <div class="row">
+                    <label>Date<input type="date" id="date" required /></label>
+                    <label>Amount
+                        <input type="number" id="amount" step="0.01" min="0" placeholder="0.00" required />
+                    </label>
+                </div>
+
+                <div class="row">
+                    <label>Category
+                        <select id="category">
+                            <option>Pre-Trip</option>
+                            <option>Trip</option>
+                            <option>Post-Trip</option>
+                        </select>
+                    </label>
+                    <label>Traveler
+                        <input type="text" id="traveler" placeholder="Name (optional)" />
+                    </label>
+                </div>
+
+                <label>Description
+                    <input type="text" id="description" placeholder="e.g., airport parking" />
+                </label>
+
+                <label>Receipt (image)
+                    <input type="file" id="receipt" accept="image/*" />
+                    <small class="muted">Receipt upload stored locally; OCR integration point</small>
+                </label>
+
+                <div class="actions">
+                    <button type="submit" id="add-btn">Add Expense</button>
+                    <button type="button" id="sync-btn">Sync</button>
+                    <button type="button" id="export-csv">Export CSV</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Expenses</h2>
+            <ul id="expenses-list" class="expenses-list"></ul>
+        </section>
+
+        <section class="card charts">
+            <h2>Analytics</h2>
+            <div class="chart-row">
+                <canvas id="pie-chart" width="300" height="200"></canvas>
+            </div>
+            <div class="chart-row">
+                <canvas id="line-chart" width="300" height="200"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <small>Offline-first demo • Syncs to backend endpoint <code>/api/sync</code></small>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="src/idb.js"></script>
+    <script src="src/app.js"></script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('src/sw.js').catch((err) => console.warn('SW register failed:', err));
+        }
+    </script>
+</body>
+
+</html>

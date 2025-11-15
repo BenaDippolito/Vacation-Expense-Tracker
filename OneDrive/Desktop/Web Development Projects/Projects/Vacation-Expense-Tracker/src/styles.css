@@ -1,0 +1,124 @@
+/* Mobile-first styles for Vacation Expense Tracker */
+:root {
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --accent: #1f7aef;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+    Arial;
+  color: #111;
+  background: var(--bg);
+}
+.topbar {
+  background: linear-gradient(90deg, #1f7aef, #3aa0ff);
+  color: #fff;
+  padding: 14px 16px;
+}
+.topbar h1 {
+  margin: 0;
+  font-size: 18px;
+}
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.95;
+}
+.container {
+  padding: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.card {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+}
+.row {
+  display: flex;
+  gap: 8px;
+}
+.row label {
+  flex: 1;
+}
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+button {
+  background: var(--accent);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button[disabled] {
+  opacity: 0.6;
+}
+.expenses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.expenses-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px dashed #eef2ff;
+}
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+.footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.charts .chart-row {
+  padding: 6px;
+}
+.thumb {
+  width: 56px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e6eefc;
+}
+@media (min-width: 700px) {
+  .row {
+    flex-direction: row;
+  }
+  .container {
+    padding: 20px;
+  }
+}

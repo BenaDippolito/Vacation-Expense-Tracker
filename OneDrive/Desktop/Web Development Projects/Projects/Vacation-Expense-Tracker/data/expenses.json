@@ -1,0 +1,14 @@
+[
+  {
+    "receiptData": null,
+    "synced": false,
+    "id": "test-3f1854fc-e9ff-4673-af1d-2e0b60a340ce",
+    "amount": 12.34,
+    "date": "2025-11-15",
+    "description": "Automated test expense",
+    "createdAt": "2025-11-15T16:44:43.6199891-06:00",
+    "category": "Trip",
+    "traveler": "Tester",
+    "_serverReceivedAt": "2025-11-15T22:44:43.712Z"
+  }
+]
