@@ -1,0 +1,230 @@
+/* Mobile-first styles for Vacation Expense Tracker */
+:root {
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --muted: #6b6b6b;
+  --accent: #d46c8f; /* warm rose */
+  --accent-2: #7aa2c7; /* soft teal */
+  --success: #62b26f;
+  --danger: #e76f51;
+  --chip-bg: #fff0f4;
+  --card-shadow: 0 6px 18px rgba(23, 23, 23, 0.06);
+  --radius: 12px;
+  --max-width: 960px;
+  --gap: 12px;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  --transition: 180ms ease;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue",
+    Arial;
+  color: #111;
+  background: var(--bg);
+}
+.topbar {
+  background: linear-gradient(90deg, #1f7aef, #3aa0ff);
+  color: #fff;
+  padding: 14px 16px;
+}
+.topbar h1 {
+  margin: 0;
+  font-size: 18px;
+}
+.subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  opacity: 0.95;
+}
+.container {
+  padding: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.row {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+}
+.row label {
+  flex: 1;
+}
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+button {
+  background: var(--accent);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+button[disabled] {
+  opacity: 0.6;
+}
+.expenses-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.expenses-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px dashed #eef2ff;
+}
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+.footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.charts .chart-row {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.thumb {
+  width: 56px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #e6eefc;
+}
+.chart-controls {
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+@media (min-width: 700px) {
+  .row {
+    flex-direction: row;
+  }
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+}
+.btn:focus {
+  outline: 3px solid rgba(212, 108, 143, 0.18);
+  outline-offset: 2px;
+}
+
+/* Chips / category badge */
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip-bg);
+  color: var(--muted);
+  font-weight: 600;
+  cursor: pointer;
+}
+.category-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  flex: 0 0 12px;
+}
+
+/* Expense item */
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 8px;
+  border-radius: 8px;
+  transition: background 0.12s;
+}
+.expense-item .meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Small utilities */
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.hint {
+  font-size: 0.9rem;
+  color: #8a8a8a;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .container {
+    padding: 12px;
+  }
+  .btn {
+    padding: 10px 12px;
+  }
+}

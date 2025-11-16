@@ -1,0 +1,38 @@
+[
+  {
+    "receiptData": null,
+    "synced": false,
+    "id": "test-3f1854fc-e9ff-4673-af1d-2e0b60a340ce",
+    "amount": 12.34,
+    "date": "2025-11-15",
+    "description": "Automated test expense",
+    "createdAt": "2025-11-15T16:44:43.6199891-06:00",
+    "category": "Trip",
+    "traveler": "Tester",
+    "_serverReceivedAt": "2025-11-15T22:44:43.712Z"
+  },
+  {
+    "id": "e1763246475053-v9gwp",
+    "date": "2025-11-15",
+    "amount": 800,
+    "category": "Pre-Trip",
+    "traveler": "Tikka",
+    "description": "Doggy Daycare",
+    "receiptData": null,
+    "createdAt": "2025-11-15T22:41:15.053Z",
+    "synced": false,
+    "_serverReceivedAt": "2025-11-15T23:31:40.718Z"
+  },
+  {
+    "id": "e1763246515669-y7bmx",
+    "date": "2025-11-20",
+    "amount": 42,
+    "category": "Pre-Trip",
+    "traveler": "",
+    "description": "gas",
+    "receiptData": null,
+    "createdAt": "2025-11-15T22:41:55.669Z",
+    "synced": false,
+    "_serverReceivedAt": "2025-11-15T23:31:40.721Z"
+  }
+]
